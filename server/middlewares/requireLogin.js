@@ -2,6 +2,7 @@ const jwt=require("jsonwebtoken")//gives unique tokens to each user to log in
 const {JWT_SECRET}=require('../keys')
 const mongoose=require('mongoose')
 const User=mongoose.model("User")
+mongoose.set('useFindAndModify', false);
 //middleware to make sure that the user is logged in
 module.exports=(req,res,next)=>{
     const{authorization}=req.headers // store the token in authorisation

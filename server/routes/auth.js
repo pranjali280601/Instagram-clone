@@ -6,6 +6,7 @@ const bcrypt=require("bcryptjs")
 const jwt=require("jsonwebtoken")
 const{JWT_SECRET}=require('../keys')
 const requireLogin=require("../middlewares/requireLogin")
+mongoose.set('useFindAndModify', false);
 
 
 router.post('/signup',(req,res)=>{
