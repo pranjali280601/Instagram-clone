@@ -9,6 +9,8 @@ const NavBar=()=>{
       return [
         <li><Link to="/profile">Profile</Link></li>,
         <li><Link to="/createpost">Create Post</Link></li>,
+        <li><Link to="/myfollowingpost">Explore</Link></li>,
+       
         <li>
         <button className="btn waves-effect waves-light #1e88e5 blue darken-1"
         onClick={()=>{

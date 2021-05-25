@@ -116,4 +116,17 @@ router.delete('/deletepost/:postId',requireLogin,(req,res)=>{
         }
     })
 })
+
+router.get('/getsubpost',requireLogin,(req,res)=>{
+    Post.find({postedBy:{$in:req.user.following}}) // displays all the posts in the table but doesn't display that who posted it
+    .populate("postedBy","_id name") //therefore we mention it explicitly using the populate function
+    .populate("comments.postedBy","_id name")
+    .then(posts=>{
+        res.json({posts})//show all the posts
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+})
+
 module.exports=router

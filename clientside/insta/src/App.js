@@ -9,6 +9,7 @@ import SignIn from './components/screens/SignIn'
 import CreatePost from './components/screens/CreatePost'
 import UserProfile from './components/screens/UserProfile'
 import {reducer,initialState } from './reducers/userReducer'
+import  SubscribedUserPosts from './components/screens/SubscribedUserPosts' 
 
 export const UserContext=createContext()
 
@@ -47,6 +48,9 @@ const Routing=()=>{
       </Route>
       <Route exact path="/profile/:userid">
       <UserProfile />
+      </Route>
+      <Route exact path="/myfollowingpost">
+      <SubscribedUserPosts />
       </Route>
       <Route exact path="/">
       <Home />
