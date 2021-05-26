@@ -24,5 +24,5 @@ app.use(require('./routes/auth'))
 app.use(require('./routes/post'))
 app.use(require('./routes/user'))
 app.listen(PORT,()=>{
-    console.log("Server is running on port ",PORT)
+    console.log("Server is running on port ",PORT) //gives the port the server is running on
 })
